@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -468,6 +469,7 @@
   }
 
 </style>
+
 </head>
 
 <body>
@@ -479,185 +481,86 @@
   <section class="brand" aria-label="هوية الجهة">
     <div class="logos-row">
 
-      <img
-        class="security"
-        src="logo_security.png"
-        alt="الأمن العام"
-      >
+  <img
+    class="security"
+    src="logo_security.png"
+    alt="الأمن العام"
+  >
 
-      <div class="logo-divider"></div>
+  <div class="logo-divider"></div>
 
-      <img
-        class="training"
-        src="logo_training.png"
-        alt="مدينة تدريب الأمن العام بالمنطقة الشرقية"
-      >
+  <img
+    class="training"
+    src="logo_training.png"
+    alt="مدينة تدريب الأمن العام بالمنطقة الشرقية"
+  >
 
-    </div>
+</div>
+
   </section>
 
   <div class="divider"></div>
 
   <section class="evaluation-section">
 
-    <h1>تقييم التجربة التدريبية</h1>
+<h1>تقييم التجربة التدريبية</h1>
 
-    <p class="subtitle">
-      نأمل مشاركتكم رأيكم، ويسهم تقييمكم في تطوير وتحسين العملية التدريبية.
-    </p>
+<p class="subtitle">
+  نأمل مشاركتكم رأيكم، ويسهم تقييمكم في تطوير وتحسين العملية التدريبية.
+</p>
 
-    <section class="choices">
+<section class="choices">
 
-      <button
-        class="choice good"
-        onclick="submitRating('راضي')"
-        aria-label="راضي"
-      >
-        <span class="emoji face-icon" aria-hidden="true">
-          <svg viewBox="0 0 160 160">
-            <circle cx="80" cy="80" r="64"/>
-            <circle class="eye" cx="57" cy="64" r="5"/>
-            <circle class="eye" cx="103" cy="64" r="5"/>
-            <path d="M50 92 Q80 120 110 92"/>
-          </svg>
-        </span>
-        <span class="rating-label">راضي</span>
-      </button>
+  <button
+    class="choice good"
+    onclick="submitRating('راضي')"
+    aria-label="راضي"
+  >
+    <span class="emoji face-icon" aria-hidden="true">
+      <svg viewBox="0 0 160 160">
+        <circle cx="80" cy="80" r="64"/>
+        <circle class="eye" cx="57" cy="64" r="5"/>
+        <circle class="eye" cx="103" cy="64" r="5"/>
+        <path d="M50 92 Q80 120 110 92"/>
+      </svg>
+    </span>
+    <span class="rating-label">راضي</span>
+  </button>
 
-      <button
-        class="choice neutral"
-        onclick="submitRating('محايد')"
-        aria-label="محايد"
-      >
-        <span class="emoji face-icon" aria-hidden="true">
-          <svg viewBox="0 0 160 160">
-            <circle cx="80" cy="80" r="64"/>
-            <circle class="eye" cx="57" cy="64" r="5"/>
-            <circle class="eye" cx="103" cy="64" r="5"/>
-            <path d="M50 100 L110 100"/>
-          </svg>
-        </span>
-        <span class="rating-label">محايد</span>
-      </button>
+  <button
+    class="choice neutral"
+    onclick="submitRating('محايد')"
+    aria-label="محايد"
+  >
+    <span class="emoji face-icon" aria-hidden="true">
+      <svg viewBox="0 0 160 160">
+        <circle cx="80" cy="80" r="64"/>
+        <circle class="eye" cx="57" cy="64" r="5"/>
+        <circle class="eye" cx="103" cy="64" r="5"/>
+        <path d="M50 100 L110 100"/>
+      </svg>
+    </span>
+    <span class="rating-label">محايد</span>
+  </button>
 
-      <button
-        class="choice bad"
-        onclick="submitRating('غير راضي')"
-        aria-label="غير راضي"
-      >
-        <span class="emoji face-icon" aria-hidden="true">
-          <svg viewBox="0 0 160 160">
-            <circle cx="80" cy="80" r="64"/>
-            <circle class="eye" cx="57" cy="64" r="5"/>
-            <circle class="eye" cx="103" cy="64" r="5"/>
-            <path d="M50 112 Q80 84 110 112"/>
-          </svg>
-        </span>
-        <span class="rating-label">غير راضي</span>
-      </button>
+  <button
+    class="choice bad"
+    onclick="submitRating('غير راضي')"
+    aria-label="غير راضي"
+  >
+    <span class="emoji face-icon" aria-hidden="true">
+      <svg viewBox="0 0 160 160">
+        <circle cx="80" cy="80" r="64"/>
+        <circle class="eye" cx="57" cy="64" r="5"/>
+        <circle class="eye" cx="103" cy="64" r="5"/>
+        <path d="M50 112 Q80 84 110 112"/>
+      </svg>
+    </span>
+    <span class="rating-label">غير راضي</span>
+  </button>
 
-    </section>
+</section>
 
   </section>
 
 </main>
-
-
-<form
-  id="ratingForm"
-  method="POST"
-  target="submitFrame"
->
-  <input
-    type="hidden"
-    name="rating"
-    id="ratingInput"
-  >
-</form>
-
-
-<iframe
-  name="submitFrame"
-  id="submitFrame"
-  style="display:none">
-</iframe>
-
-
-<section
-  class="success"
-  id="success"
->
-
-  <div class="success-icon">✓</div>
-
-  <h2>شكرًا لك</h2>
-
-  <p>تم تسجيل تقييمكم بنجاح</p>
-
-</section>
-
-
-<script>
-
-const APP_SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbzWfI0xQ3L3qjI2eRqgLxEa86v34aBboARHd7MTpHJzkimbuDN_Ue9ARV6XEyBQEmzj/exec";
-
-
-const form =
-  document.getElementById("ratingForm");
-
-const ratingInput =
-  document.getElementById("ratingInput");
-
-const success =
-  document.getElementById("success");
-
-const buttons =
-  document.querySelectorAll(".choice");
-
-let sending = false;
-
-
-function submitRating(rating){
-
-  // منع الضغط المتكرر
-  if(sending){
-    return;
-  }
-
-  sending = true;
-
-  buttons.forEach(button => {
-    button.classList.add("disabled");
-  });
-
-
-  ratingInput.value = rating;
-
-  form.action = APP_SCRIPT_URL;
-
-  form.submit();
-
-
-  // رسالة الشكر
-  success.classList.add("show");
-
-
-  setTimeout(() => {
-
-    success.classList.remove("show");
-
-    sending = false;
-
-    buttons.forEach(button => {
-      button.classList.remove("disabled");
-    });
-
-  }, 2200);
-
-}
-
-</script>
-
-</body>
-</html>
