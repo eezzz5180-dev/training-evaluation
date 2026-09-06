@@ -564,3 +564,47 @@
   </section>
 
 </main>
+
+<form id="ratingForm" method="POST" target="submitFrame">
+  <input type="hidden" name="rating" id="ratingInput">
+</form>
+
+<iframe name="submitFrame" id="submitFrame" style="display:none"></iframe>
+
+<section class="success" id="success">
+  <div class="success-icon">✓</div>
+  <h2>شكرًا لك</h2>
+  <p>تم تسجيل تقييمكم بنجاح</p>
+</section>
+
+<script>
+const APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwudumFd5cCMSLDjfsHtJwN0-FaBocWrjjVK0SgZO8gMumjIIY5JyjtXXFt1w8tK_jr/exec";
+
+const form = document.getElementById("ratingForm");
+const ratingInput = document.getElementById("ratingInput");
+const success = document.getElementById("success");
+const buttons = document.querySelectorAll(".choice");
+let sending = false;
+
+function submitRating(rating) {
+  if (sending) return;
+
+  sending = true;
+  buttons.forEach(button => button.classList.add("disabled"));
+
+  ratingInput.value = rating;
+  form.action = APP_SCRIPT_URL;
+  form.submit();
+
+  success.classList.add("show");
+
+  setTimeout(() => {
+    success.classList.remove("show");
+    sending = false;
+    buttons.forEach(button => button.classList.remove("disabled"));
+  }, 2200);
+}
+</script>
+
+</body>
+</html>
